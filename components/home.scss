@@ -1,0 +1,88 @@
+@import "../dist/styles";
+
+.nav-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 9em 1fr 1fr 1fr;
+  align-items: center;
+  overflow: hidden;
+  align-self: center;
+}
+
+.menu {
+  height: 3em;
+  width: 3em;
+  grid-row: 1;
+  grid-column: 1;
+  align-self: start;
+  margin: 1em;
+  z-index: 1;
+  background-color: transparent;
+}
+
+#explore {
+  z-index: 1;
+  height: 3em;
+  background-color: transparent;
+  position: absolute;
+  transform: rotate(330deg);
+  top: 0;
+  left: 0;
+  margin-top: 1em;
+}
+
+#explore:hover {
+  transform: scale(1.2);
+  cursor: url("../dist/asset/view2.svg"), default;
+}
+
+.click-cursor:hover {
+  cursor: url("../dist/asset/click-rotated.svg") 0 50, default;
+}
+
+#nuri-kim {
+  grid-area: 3 / 1 / 5 / 4;
+  background-color: transparent;
+  opacity: 0.3;
+  z-index: 1;
+  transform: rotate(350deg);
+  align-self: flex-start;
+}
+
+#nuri-kim > img {
+  background-color: transparent;
+}
+
+#about-me {
+  grid-area: 2/3/4/4;
+  z-index: 1;
+  background-color: transparent;
+  text-align: start;
+  font-size: 0.6em;
+  transform: rotate(350deg);
+  font-family: $main-font;
+  align-self: flex-start;
+  @media (min-width: 600px) {
+    font-size: 1.2em;
+  }
+}
+
+#here {
+  background-color: transparent;
+  font-size: 1.3em;
+  color: $accent-color;
+  font-family: $cursive-font;
+  padding-left: $spacing;
+}
+
+#here:hover {
+  font-size: 2em;
+}
+
+#plus {
+  transform: rotate(40deg);
+}
+
+#nuri-small {
+  font-size: 4.5em;
+}

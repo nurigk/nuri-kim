@@ -1,0 +1,64 @@
+@import "../dist/styles";
+
+.home-bg-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  cursor: url("../dist/asset/cursor.svg") 10 15,auto;
+  position: fixed;
+}
+
+#home-background {
+  position: absolute;
+}
+
+.cls-1,
+.cls-3,
+.cls-4 {
+  opacity: 0.35;
+}
+.cls-2 {
+  fill: #f9f7f4;
+}
+.cls-3 {
+  fill: #eab7a0;
+}
+.cls-4,
+.cls-9 {
+  isolation: isolate;
+}
+.cls-5 {
+  fill: #fff;
+}
+.cls-11,
+.cls-6,
+.cls-8 {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 0;
+}
+.cls-6 {
+  stroke: #000;
+}
+.cls-7 {
+  fill: #1a1818;
+}
+.cls-8 {
+  stroke: #1a1818;
+}
+.cls-10 {
+  fill: #e5361b;
+}
+.cls-11 {
+  stroke: #e5361b;
+}
+
+#eye-closed {
+  opacity: 0;
+}
+
+#heart-filled {
+  opacity: 0;
+}

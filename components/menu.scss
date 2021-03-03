@@ -1,0 +1,45 @@
+@import "../dist/styles";
+
+.nav {
+  z-index: 1;
+  background-color: transparent;
+  justify-content: start;
+  align-self: center;
+  grid-area: 1 / 1 / 2 / 3;
+  background-color: transparent;
+  overflow: visible;
+}
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  align-self: flex-end;
+  z-index: 1;
+  width: 100%;
+  margin-top: 1em;
+  margin-left: 5em;
+  background-color: transparent;
+  overflow: visible;
+}
+.list-item {
+  display: flex;
+  justify-content: start;
+  padding-right: 2em;
+  align-self: flex-start;
+  align-items: center;
+  z-index: 1;
+  font-size: 1.5em;
+  background-color: transparent;
+  font-family: $cursive-font;
+}
+
+.list-item:hover {
+  cursor: url("../dist/asset/view2.svg"), default;
+  font-size: 2em;
+}
+
+.nav-list > a {
+  color: inherit;
+    text-decoration: none;
+}
