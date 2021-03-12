@@ -19,8 +19,8 @@ const Menu = ({setShowMenu}) => {
     <nav className="nav">
       <ul className="nav-list">
         <a className="list-item" href="#aib" onClick={()=>{setShowMenu(false)}}>Software Application</a>
-        <li className="list-item" onClick={()=>{setView("resume")}}>Resume</li>
-        <li className="list-item" onClick={()=>{setView("contact")}}>Contact me</li>
+        <a className="list-item" href="#resume" onClick={()=>{setShowMenu(false)}}>Resume</a>
+        <a className="list-item" href="#contact" onClick={()=>{setShowMenu(false)}}>Contact me</a>
       </ul>
     {/* {changeViews()} */}
     </nav>

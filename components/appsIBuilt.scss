@@ -1,69 +1,207 @@
 @import "../dist/styles";
 
 .aib-container {
+  height: 100%;
   overflow: hidden;
-  display: grid;
-  grid-template-rows: 3em 1fr 1fr 1fr 1fr;
 }
 
-.titles > .title-containers {
-  grid-row: 1/2;
+.apps-container {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
+  background-color: $main-background;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
 }
-.title-containers {
-  z-index: 2;
+
+.app-item {
+  align-self: center;
+  width: 100%;
   display: flex;
-  align-self: flex-start;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  margin-left: 2em;
   white-space: nowrap;
+  overflow: visible;
+  background-color: transparent;
+}
+.app-name {
+  z-index: 2;
+  background-color: transparent;
+  font-size: 5em;
+  height: fit-content;
+  align-self: center;
+  justify-self: center;
+  font-family: $display-font;
+  position: absolute;
+  @media (max-height: 500px), (max-width: 450px) {
+    font-size: 2em;
+  }
+}
+.rect-img {
+  height: 85%;
+  background-color: transparent;
+  overflow: visible;
+  @media (max-height: 500px), (max-width: 450px) {
+    height: 60%;
+  }
+}
+.rect {
   background-color: transparent;
   position: absolute;
+  overflow: visible;
 }
 
-.apps-title {
-  display: flex;
-  align-items: flex-start;
-  margin-right: 9em;
-  margin-top: 2em;
-  font-size: 1em;
-  font-family: $cursive-font;
-  align-self: center;
+.icon {
+  background-size: cover;
+  width: 3em;
+  height: 3em;
+  background-repeat: no-repeat;
   background-color: transparent;
+  z-index: 2;
+  fill: $font-color;
+  @media (max-height: 500px), (max-width: 400px) {
+    width: 2em;
+    height: 2em;
+  }
 }
 
-// .aib-container > .apps-panel {
-//   grid-row: 2 / span 4;
-//   background-color: lavender;
-// }
-
-.apps-list div:first-child {
-  grid-row: 2/3;
+.gh-logo {
+  background-image: url("../dist/asset/github-logo.svg");
 }
-.apps-list div:nth-child(2) {
-  grid-row: 3/4;
+.gh-logo:hover {
+  cursor: url("../dist/asset/view-gh.svg"), default;
 }
-.apps-list div:nth-child(3) {
-  grid-row: 4/5;
+
+.icon:hover {
+  transform: scale(1.2);
 }
-.apps-list div:last-child {
-  grid-row: 5/6;
+
+//namaslay
+#namaslay-gh {
+  margin-left: 30em;
+  align-self: flex-end;
+  @media (max-width: 450px) {
+    margin-left: 12em;
+    align-self: center;
+   }
 }
-// .scroll-down {
-//   background-color: transparent;
-//   // position: absolute;
-//   height: 5em;
-// }
-// .namaslay {
-//   background-color: violet;
-// }
 
-// .crisp {
-//   background-color: wheat;
-// }
+#namaslay-container {
+  grid-area: 1/1/2/2;
+}
+#namaslay {
+  align-self: center;
+}
 
-// .plantsitter {
-//   background-color: yellowgreen;
-// }
+.namaslay-color {
+  color: $brown;
+}
 
-// .products {
-//   background-color: yellow;
-// }
+#n-rect {
+  align-self: flex-end;
+  margin-left: 20em;
+  @media (max-width: 450px) {
+    margin-left: 10%;
+   }
+}
+
+//crisp
+#crisp-container {
+  grid-area: 2/1/3/2;
+  margin-right: 70%;
+  @media (max-width: 450px) {
+    margin-right: 50%;
+   }
+}
+#crisp {
+  margin-left: 20%;
+}
+.crisp-color {
+  color: $pink;
+}
+
+#crisp-gh {
+  margin-left: 5em;
+  align-self: flex-start;
+}
+#c-rect {
+  margin-left: 10em;
+}
+
+//plantsitter
+.plantsitter-color {
+  color: $green;
+}
+
+#plantsitter-container {
+  margin-left: 50%;
+  grid-area: 3/1/4/2;
+  margin-bottom: 10%;
+  @media (max-width: 450px) {
+    margin-left: 30%;
+    margin-bottom: 5%;
+   }
+}
+#plantsitter {
+  margin-right: 5%;
+  align-self: center;
+}
+#plantsitter-gh {
+  align-self: flex-end;
+  margin-right: 2em;
+  margin-top: 3em;
+  @media (max-width: 450px) {
+    align-self: center;
+  }
+}
+#pl-rect {
+  margin-left: 10em;
+  @media (max-width: 450px) {
+    margin-left: 0;
+  }
+}
+
+//products
+#products-container {
+  margin-right: 20%;
+  grid-area: 4/1/5/2;
+}
+
+.products-color {
+  color: $purple;
+}
+
+#products-gh {
+  align-self: flex-start;
+  margin-left: 10em;
+  top: -2em;
+}
+
+#pr-rect {
+  margin-left: 5em;
+  transform: translateY(-15%);
+}
+
+#apps-nuri-kim {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+}
+
+#software-application {
+  position: absolute;
+  height: 20em;
+  background-color: transparent;
+  z-index: 3;
+  margin: 1em;
+  left: 0;
+  top: 3em;
+  @media (min-height: 800px) {
+    height: 30em;
+  }
+}

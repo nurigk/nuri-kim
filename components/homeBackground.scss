@@ -5,54 +5,14 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  cursor: url("../dist/asset/cursor.svg") 10 15,auto;
   position: fixed;
+  background-color: $primary-color;
+  width: 100%;
 }
 
 #home-background {
   position: absolute;
-}
-
-.cls-1,
-.cls-3,
-.cls-4 {
-  opacity: 0.35;
-}
-.cls-2 {
-  fill: #f9f7f4;
-}
-.cls-3 {
-  fill: #eab7a0;
-}
-.cls-4,
-.cls-9 {
-  isolation: isolate;
-}
-.cls-5 {
-  fill: #fff;
-}
-.cls-11,
-.cls-6,
-.cls-8 {
-  fill: none;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 0;
-}
-.cls-6 {
-  stroke: #000;
-}
-.cls-7 {
-  fill: #1a1818;
-}
-.cls-8 {
-  stroke: #1a1818;
-}
-.cls-10 {
-  fill: #e5361b;
-}
-.cls-11 {
-  stroke: #e5361b;
+  align-self: center;
 }
 
 #eye-closed {
@@ -61,4 +21,43 @@
 
 #heart-filled {
   opacity: 0;
+}
+
+.cls-1 {
+  fill: #f9d7cd;
+}
+.cls-2 {
+  fill: #f8f6f3;
+}
+.cls-3 {
+  fill: #fff;
+}
+.cls-11,
+.cls-4 {
+  fill: #565656;
+}
+.cls-5,
+.cls-9 {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 0;
+}
+.cls-5 {
+  stroke: #565656;
+}
+.cls-6 {
+  opacity: 0.35;
+}
+.cls-7 {
+  isolation: isolate;
+}
+.cls-8 {
+  fill: #e2361b;
+}
+.cls-9 {
+  stroke: #e2361b;
+}
+.cls-10 {
+  fill: #f6685d;
 }

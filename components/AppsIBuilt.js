@@ -3,116 +3,219 @@ import { hot } from "react-hot-loader/root";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./appsIBuilt.scss";
+import AppListItem from "./AppListItem.js";
+gsap.registerPlugin(ScrollTrigger);
 
-const AppsIBuilt = () => {
-  gsap.registerPlugin(ScrollTrigger);
-  // const containerRef = useRef();
-  // const refsArray = useRef([]);
-  // refsArray.current=[];
+const AppsIBuilt = ({ addToRefs, refsArray }) => {
+  const [appsList, setAppsList] = useState([
+    {
+      appName: "Namaslay",
+      nickName: "namaslay",
+      githubUrl: "https://github.com/blue-ocean-hrnyc31/namaslay-client",
+      techUsed: `React + Hooks, React-Router, Docker, React-Bootstrap, Express, PassportJS
+      PostgreSQL, Puppeteer, Jest`,
+      appDesc: `Namaslay is a virtual yoga studio where members can enjoy the
+      community without visiting the studio in person. I worked on the
+      yoga and meditation rooms where all logged in users can view each
+      others activity and location, chat, and listen to music. I worked
+      on data visualization using SVG elements to map users data and
+      translating wireframe into an interactive and responsive app.`,
+      demoUrl: "../dist/asset/namaslay-demo.mp4",
+    },
+    {
+      appName: "Crisp",
+      nickName: "crisp",
+      githubUrl: "https://github.com/hrnyc31-team-sparrow/FEC",
+      techUsed: `React + Hooks, Redux + Hooks, Sass, Express`,
+      appDesc: `Crisp is a fashion e-commerce web application. I worked on the reviews and ratings widget where users can sort through the reviews and submit their own.`,
+      demoUrl: "../dist/asset/crisp-demo-small.mp4",
+    },
+    {
+      appName: "Plantsitter",
+      nickName: "plantsitter",
+      githubUrl: "https://github.com/nurigk/plantsitter",
+      techUsed: `React + Hooks, Twilio, Node-cron, Sass, Express`,
+      appDesc: `Plantsitter is a MVP project that I created where users can sign up and get text message reminders to water their plants at the frequency of their choosing.`,
+      demoUrl: "../dist/asset/plantsitter-demo.mp4",
+    },
+    {
+      appName: "Products-Service-API",
+      nickName: "products",
+      githubUrl: "https://github.com/SDC-Stratocumulus/products-service",
+      techUsed: `Express, PostgreSQL, Docker, Artillery`,
+      appDesc: `This is an API microservice built to scale up a back-end system of an e-commerce web application where I designed system architecture to encapsulate business logic and achieve a modernized system to support web-scale traffic.`,
+      demoUrl: "../dist/asset/api.mp4",
+    },
+  ]);
+  const [currentApp, setCurrentApp] = useState({});
+  const tlLeft = gsap.timeline();
 
-  const tlApps = gsap.timeline({ repeat: -1 });
-  const tlApps2 = gsap.timeline({ repeat: -1, delay: 8 });
-  let containerWidth = containerWidth || 0 ;
-
-  const addToRefs = el => {
-    if (el && !refsArray.current.includes(el)) {
-      refsArray.current.push(el);
-    }
+  const handleSetCurrentApp = (app) => {
+    let filtered = appsList.filter((e) => {
+      return e.appName.includes(app);
+    });
+    setCurrentApp(filtered[0]);
   };
-
-  // useEffect(() => {
-  //     containerWidth=containerRef.current.offsetWidth
-  //     console.log(containerWidth)
-  //     console.log("refsArray.current: ",refsArray.current)
-  // },[])
 
 
   useEffect(() => {
 
-    gsap.to("#nuri-kim", {
-      x: "-250%",
-      duration: 3,
-      scrollTrigger: {
-        trigger: "#apps-title",
-        scrub: true,
-      },
-    });
-
-    gsap.to("#about-me", {
+    gsap.to("#about", {
       x: "250%",
       duration: 3,
       scrollTrigger: {
-        trigger: "#apps-title",
+        trigger: "#aib",
         scrub: 1,
       },
     });
 
-    tlApps.from(".title-container1", {
-      x: "100%",
-      duration: 16,
-      scrollTrigger: ".titles",
-      ease: "none",
+    gsap.from("#namaslay-container, #plantsitter-container", {
+      x: "150%",
+      duration: 3,
+      scrollTrigger: {
+        trigger: "#home-section",
+        start:"top top",
+        scrub: 1,
+      },
     });
 
-    tlApps.to(".title-container1", { x: "-100%", duration: 16, ease: "none" });
-
-    tlApps2.from(".title-container2", {
-      x: "105%",
-      duration: 16,
-      scrollTrigger: ".titles",
-      ease: "none",
+    gsap.from("#crisp-container, #products-container", {
+      x: "-100%",
+      duration: 3,
+      scrollTrigger: {
+        trigger: "#home-section",
+        start:"top top",
+        scrub: 1,
+      },
     });
-
-    tlApps2.to(".title-container2", { x: "-100%", duration: 16, ease: "none" });
-
-    // gsap.to(refsArray.current,{
-    //   xPercent: -100 * 3,
-    //   ease: "none",
-    //   scrollTrigger: {
-    //     trigger: ".home-bg-container",
-    //     start:"bottom top",
-    //     invalidateOnRefresh: true,
-
-    //     scrub: 1,
-    //     snap: 1 / 3,
-    //     end: () => "+=" + containerWidth
-    //   }
-    // })
   }, []);
 
+  useEffect(()=>{
+    return ()=>{
+      setCurrentApp({})
+    }
+  },[])
+
+
+  const diplayDetail = () => {
+    if (currentApp !== {}) {
+      return (
+        <AppListItem currentApp={currentApp} setCurrentApp={setCurrentApp} />
+      );
+    }
+  };
+
   return (
-    <section className="aib-container" id="aib" >
-      <div className="titles">
-        <div className="title-container1 title-containers">
-          <span className="apps-title">Software Application</span>
-          <span className="apps-title">Software Application</span>
-          <span className="apps-title">Software Application</span>
-          <span className="apps-title">Software Application</span>
-        </div>
-        <div className="title-container2 title-containers">
-          <span className="apps-title">Software Application</span>
-          <span className="apps-title">Software Application</span>
-          <span className="apps-title">Software Application</span>
-          <span className="apps-title">Software Application</span>
-        </div>
-      </div>
-      {/* <div className="apps-panel namaslay" ref={addToRefs}>Namaslay</div>
-      <div className="apps-panel crisp" ref={addToRefs}>Crisp</div>
-      <div className="apps-panel plantsitter" ref={addToRefs}>Plantsitter</div>
-      <div className="apps-panel products" ref={addToRefs}>Products-Service API</div> */}
-      <ul className="apps-list">
-          <div className="apps-item">
-            <img id="namslay-preview" />
-            <a >Namaslay</a>
-            </div>
-          <div className="apps-item"><a>Crisp</a></div>
-          <div className="apps-item">Plantsitter</div>
-          <div className="apps-item">Products-Service API</div>
-      </ul>
-      {/* <div className="scroll-down">
+    <section className="aib-container" id="aib" ref={addToRefs}>
+      <div className="apps-container">
+        {diplayDetail()}
+        {/* <div className="apps-list"> */}
+
+        {/* <AppListItem appsList={appsList} addToRefs={addToRefs} refsArray={refsArray}/> */}
+
+        {/* <div className="scroll-down">
         Scroll down
         <div className="down-arrow" />
       </div> */}
+
+        <img
+          id="software-application"
+          src="../dist/asset/software-application.svg"
+          alt="Software Application"
+        ></img>
+
+        <img
+          className="nuri-kim"
+          id="apps-nuri-kim"
+          src="../dist/asset/nuri-kim.svg"
+          alt="Nuri Kim"
+        ></img>
+
+        <div id="namaslay-container" className="app-item">
+          <h1
+            id="namaslay"
+            className="app-name clickable namaslay-color"
+            onClick={() => {
+              handleSetCurrentApp("Namaslay");
+            }}
+          >
+            Namaslay
+          </h1>
+          <a
+            id="namaslay-gh"
+            href="https://github.com/blue-ocean-hrnyc31/namaslay-client"
+            className="gh-logo icon"
+            target="_blank"
+          ></a>
+          <span className="rect" id="n-rect">
+            <img className="rect-img" src="../dist/asset/rect.svg"></img>
+          </span>
+        </div>
+
+        <div id="crisp-container" className="app-item">
+          <h1
+            id="crisp"
+            className="app-name clickable crisp-color"
+            onClick={() => {
+              handleSetCurrentApp("Crisp");
+            }}
+          >
+            Crisp
+          </h1>
+          <a
+            id="crisp-gh"
+            className="gh-logo icon"
+            href="https://github.com/hrnyc31-team-sparrow/FEC"
+            target="_blank"
+          ></a>
+          <span className="rect" id="c-rect">
+            <img className="rect-img" src="../dist/asset/rect.svg"></img>
+          </span>
+        </div>
+
+        <div id="plantsitter-container" className="app-item">
+          <h1
+            id="plantsitter"
+            className="app-name clickable plantsitter-color"
+            onClick={() => {
+              handleSetCurrentApp("Plantsitter");
+            }}
+          >
+            Plantsitter
+          </h1>
+          <a
+            id="plantsitter-gh"
+            className="gh-logo icon"
+            href="https://github.com/nurigk/plantsitter"
+            target="_blank"
+          ></a>
+          <span className="rect" id="pl-rect">
+            <img className="rect-img" src="../dist/asset/rect.svg"></img>
+          </span>
+        </div>
+
+        <div id="products-container" className="app-item">
+          <h1
+            id="products"
+            className="app-name clickable products-color"
+            onClick={() => {
+              handleSetCurrentApp("Products");
+            }}
+          >
+            Products-Sevice API
+          </h1>
+          <a
+            id="products-gh"
+            className="gh-logo icon"
+            href="https://github.com/SDC-Stratocumulus/products-service"
+            target="_blank"
+          ></a>
+          <span className="rect" id="pr-rect">
+            <img className="rect-img" src="../dist/asset/rect.svg"></img>
+          </span>
+        </div>
+
+      </div>
     </section>
   );
 };

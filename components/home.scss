@@ -2,11 +2,21 @@
 
 .nav-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 9em 1fr 1fr 1fr;
   align-items: center;
   overflow: hidden;
   align-self: center;
+  background-color: $primary-color;
+  width: 100%;
+}
+
+.left-half {
+  width: 50%;
+  background-color: $main-background;
+  position: fixed;
+  left: 0;
+  top: 0;
 }
 
 .menu {
@@ -21,68 +31,122 @@
 }
 
 #explore {
-  z-index: 1;
-  height: 3em;
+  grid-area: 1/1/3/3;
+  height: 60%;
+  margin: 1em;
+  margin-left: 2em;
+  align-self: start;
+  justify-self: start;
+  z-index: 2;
   background-color: transparent;
-  position: absolute;
-  transform: rotate(330deg);
-  top: 0;
-  left: 0;
-  margin-top: 1em;
 }
 
-#explore:hover {
+.clickable:hover {
   transform: scale(1.2);
   cursor: url("../dist/asset/view2.svg"), default;
 }
 
-.click-cursor:hover {
-  cursor: url("../dist/asset/click-rotated.svg") 0 50, default;
-}
-
-#nuri-kim {
-  grid-area: 3 / 1 / 5 / 4;
+.nuri-kim {
+  height: 9em;
   background-color: transparent;
-  opacity: 0.3;
   z-index: 1;
-  transform: rotate(350deg);
-  align-self: flex-start;
+  margin: 1em;
 }
 
-#nuri-kim > img {
+#home-nuri-kim {
+  grid-area: 4/ 1 / 5 / 2;
+}
+
+.nuri-kim > img {
   background-color: transparent;
+}
+
+#about {
+  grid-area: 1/2/5/5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  background-color: transparent;
+  padding: 10%;
+  padding-left: 30%;
+  height: 100%;
+  z-index: 2;
 }
 
 #about-me {
-  grid-area: 2/3/4/4;
-  z-index: 1;
+  z-index: 2;
+  height: 35%;
   background-color: transparent;
-  text-align: start;
-  font-size: 0.6em;
-  transform: rotate(350deg);
-  font-family: $main-font;
-  align-self: flex-start;
-  @media (min-width: 600px) {
-    font-size: 1.2em;
+  align-self: center;
+  @media (max-height: 500px), (max-width: 450px) {
+    height: 20%;
   }
 }
 
-#here {
+#nuri-video {
+  height: 35%;
+  z-index: 1;
   background-color: transparent;
-  font-size: 1.3em;
-  color: $accent-color;
-  font-family: $cursive-font;
-  padding-left: $spacing;
+  opacity: 0.7;
+  align-self: center;
+  @media (max-height: 500px), (max-width: 450px) {
+    height: 20%;
+  }
 }
 
-#here:hover {
-  font-size: 2em;
-}
-
-#plus {
+.plus {
   transform: rotate(40deg);
 }
 
-#nuri-small {
-  font-size: 4.5em;
+.plus:hover {
+  transform: rotate(40deg) scale(1.2);
+}
+
+.e-cls-1 {
+  font-size: 80.58px;
+  fill: $accent-color;
+  font-family: Amerika;
+}
+.e-cls-2,
+.e-cls-3,
+.e-cls-4 {
+  fill: none;
+  stroke-miterlimit: 10;
+  isolation: isolate;
+}
+.e-cls-2 {
+  stroke: $primary-color;
+}
+.e-cls-3 {
+  stroke: $pink;
+}
+.e-cls-4 {
+  stroke: $accent-color;
+}
+
+.scroll-down {
+  position: absolute;
+  grid-area: 4/1/5/5;
+  align-self: center;
+  justify-self: center;
+  z-index: 2;
+  height: 3em;
+  display: flex;
+  margin-top: 9%;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+.down-arrow {
+  align-self: center;
+  height: 1.5em;
+  background-color: transparent;
+}
+.scroll {
+  color: $font-color;
+  height: fit-content;
+  background-color: transparent;
+  font-size: 1em;
 }
