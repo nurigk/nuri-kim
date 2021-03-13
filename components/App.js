@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import { hot } from "react-hot-loader/root";
-// import Intro from "./Intro";
 import HomeBackground from "./HomeBackground.js";
 import AppsIBuilt from "./AppsIBuilt.js";
 import Contact from "./Contact.js";
@@ -37,10 +36,6 @@ useEffect(()=>{
 
   return (
     <div className="body-container">
-      {/* {introFinished === false ? (
-        <Intro setIntroFinished={setIntroFinished} />
-      ) : ( */}
-        <>
         <section id="home-section">
           <HomeBackground />
           </section>
@@ -50,9 +45,6 @@ useEffect(()=>{
           <section id="contact-section">
           <Contact />
           </section>
-
-        </>
-      {/* )} */}
     </div>
   );
 };

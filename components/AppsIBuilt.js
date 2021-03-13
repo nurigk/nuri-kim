@@ -14,12 +14,11 @@ const AppsIBuilt = ({ addToRefs, refsArray }) => {
       githubUrl: "https://github.com/blue-ocean-hrnyc31/namaslay-client",
       techUsed: `React + Hooks, React-Router, Docker, React-Bootstrap, Express, PassportJS
       PostgreSQL, Puppeteer, Jest`,
-      appDesc: `Namaslay is a virtual yoga studio where members can enjoy the
-      community without visiting the studio in person. I worked on the
-      yoga and meditation rooms where all logged in users can view each
+      appDesc: `Namaslay is a virtual yoga studio where members can enjoy the benefits of the community without visiting the studio in person. I worked on the
+      yoga and meditation rooms where all logged-in users can view each
       others activity and location, chat, and listen to music. I worked
       on data visualization using SVG elements to map users data and
-      translating wireframe into an interactive and responsive app.`,
+      translating wireframes into an interactive and responsive app.`,
       demoUrl: "../dist/asset/namaslay-demo.mp4",
     },
     {
@@ -57,9 +56,7 @@ const AppsIBuilt = ({ addToRefs, refsArray }) => {
     setCurrentApp(filtered[0]);
   };
 
-
   useEffect(() => {
-
     gsap.to("#about", {
       x: "250%",
       duration: 3,
@@ -74,7 +71,7 @@ const AppsIBuilt = ({ addToRefs, refsArray }) => {
       duration: 3,
       scrollTrigger: {
         trigger: "#home-section",
-        start:"top top",
+        start: "top top",
         scrub: 1,
       },
     });
@@ -84,18 +81,17 @@ const AppsIBuilt = ({ addToRefs, refsArray }) => {
       duration: 3,
       scrollTrigger: {
         trigger: "#home-section",
-        start:"top top",
+        start: "top top",
         scrub: 1,
       },
     });
   }, []);
 
-  useEffect(()=>{
-    return ()=>{
-      setCurrentApp({})
-    }
-  },[])
-
+  useEffect(() => {
+    return () => {
+      setCurrentApp({});
+    };
+  }, []);
 
   const diplayDetail = () => {
     if (currentApp !== {}) {
@@ -109,14 +105,6 @@ const AppsIBuilt = ({ addToRefs, refsArray }) => {
     <section className="aib-container" id="aib" ref={addToRefs}>
       <div className="apps-container">
         {diplayDetail()}
-        {/* <div className="apps-list"> */}
-
-        {/* <AppListItem appsList={appsList} addToRefs={addToRefs} refsArray={refsArray}/> */}
-
-        {/* <div className="scroll-down">
-        Scroll down
-        <div className="down-arrow" />
-      </div> */}
 
         <img
           id="software-application"
@@ -214,7 +202,6 @@ const AppsIBuilt = ({ addToRefs, refsArray }) => {
             <img className="rect-img" src="../dist/asset/rect.svg"></img>
           </span>
         </div>
-
       </div>
     </section>
   );
