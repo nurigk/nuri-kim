@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/nurigk/nuri-kim/issues"
   },
-  "homepage": "https://github.com/nurigk/nuri-kim",
+  "homepage": "https://nurigk.github.io/nuri-kim",
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
