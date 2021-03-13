@@ -7,10 +7,11 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-dev": "webpack --mode development --watch",
     "build-prod": "webpack --mode production",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nurigk/nuri-kim.git"
+    "url": "git+https://github.com/nurigk/nurik.git"
   },
   "keywords": [],
   "author": "",
