@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import { hot } from "react-hot-loader/root";
-import plus from "../dist/asset/plus.svg";
 import Menu from "./Menu.js";
 import "./home.scss";
 import { gsap } from "gsap";
@@ -30,7 +29,7 @@ const Home = () => {
       {showMenu ? (
         <img
           className="plus menu"
-          src={plus}
+          src="/dist/asset/plus.svg"
           onClick={() => {
             setShowMenu(false);
           }}

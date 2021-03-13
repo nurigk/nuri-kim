@@ -4,17 +4,10 @@ import { gsap } from "gsap";
 import Resume from "./Resume.js";
 import "./menu.scss";
 
+
 const Menu = ({setShowMenu}) => {
   const [view, setView] = useState("menu");
-  const changeViews = () => {
-    if (view === "apps"){
-      return <AppsIBuilt />
-    } else if (view === "resume") {
-      return <Resume />
-    } else if (view === "contact") {
-      return <Contact />
-    }
-  }
+
   return (
     <nav className="nav">
       <ul className="nav-list">
@@ -22,7 +15,6 @@ const Menu = ({setShowMenu}) => {
         <a className="list-item" href="#resume" onClick={()=>{setShowMenu(false)}}>Resume</a>
         <a className="list-item" href="#contact" onClick={()=>{setShowMenu(false)}}>Contact me</a>
       </ul>
-    {/* {changeViews()} */}
     </nav>
   );
 };
