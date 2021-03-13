@@ -8,7 +8,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const App = (props) => {
-  // const [introFinished, setIntroFinished] = useState(false);
   const refsArray = useRef([]);
   refsArray.current = [];
 

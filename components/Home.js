@@ -129,7 +129,7 @@ const Home = () => {
         </svg>
       )}
 
-      <img className="nuri-kim" id="home-nuri-kim" src="../dist/asset/nuri-kim.svg" alt="Nuri Kim"></img>
+      <img className="nuri-kim" id="home-nuri-kim" src="/dist/asset/nuri-kim.svg" alt="Nuri Kim"></img>
       <div id="about">
         <video
           onMouseEnter={() => {
@@ -141,11 +141,11 @@ const Home = () => {
           muted
         >
           <source
-            src="../dist/asset/nuri_clip_small.mp4"
+            src="/dist/asset/nuri_clip_small.mp4"
             type="video/mp4"
           ></source>
         </video>
-        <img id="about-me" src="../dist/asset/about-rect2.svg"></img>
+        <img id="about-me" src="/dist/asset/about-rect2.svg"></img>
 
         <div className="contact-icons" id="home-contact">
       <a
@@ -169,7 +169,7 @@ const Home = () => {
       </div>
           <div className="scroll-down">
             <p className="scroll">SCROLL</p>
-              <img className="down-arrow" src="../dist/asset/down-arrow.svg" alt="down arrow"></img>
+              <img className="down-arrow" src="/dist/asset/down-arrow.svg" alt="down arrow"></img>
             </div>
     </div>
   );

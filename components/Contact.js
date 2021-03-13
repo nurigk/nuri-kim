@@ -37,13 +37,13 @@ const Contact = ({ addToRefs, refsArray }) => {
       <picture id="contact-background">
         <source
           media="(min-width:801px)"
-          srcSet="../dist/asset/contact-background.svg"
+          srcSet="/dist/asset/contact-background.svg"
         />
         <source
           media="(max-width:800px)"
-          srcSet="../dist/asset/contact-background-small.svg"
+          srcSet="/dist/asset/contact-background-small.svg"
         />
-        <img src="../dist/asset/contact-background.svg" alt="background" />
+        <img src="/dist/asset/contact-background.svg" alt="background" />
       </picture>
       <div className="contact-items">
         {displayResume ? (
@@ -85,7 +85,7 @@ const Contact = ({ addToRefs, refsArray }) => {
               ref={dogVideo}
             >
               <source
-                src="../dist/asset/thisisdog.mp4"
+                src="/dist/asset/thisisdog.mp4"
                 type="video/mp4"
               ></source>
             </video>
@@ -117,7 +117,7 @@ const Contact = ({ addToRefs, refsArray }) => {
       <img
         className="nuri-kim"
         id="contact-nuri-kim"
-        src="../dist/asset/nuri-kim.svg"
+        src="/dist/asset/nuri-kim.svg"
         alt="Nuri Kim"
       ></img>
     </section>

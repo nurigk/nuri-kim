@@ -20,12 +20,12 @@ const Resume = ({displayResume, setDisplayResume}) => {
       <img
       className="plus"
           id="close"
-          src="../dist/asset/plus.svg"
+          src="/dist/asset/plus.svg"
           onClick={handleClose}
         ></img>
 
-      <img id="resume-img" src="../dist/asset/resume.png" alt="Resume" ></img>
-      <a id="click-download"href="../dist/asset/resume.png" download="nuri-kim-resume">
+      <img id="resume-img" src="/dist/asset/resume.png" alt="Resume" ></img>
+      <a id="click-download"href="/dist/asset/resume.png" download="nuri-kim-resume">
         <h1 >Click here to download</h1>
         </a>
     </section>

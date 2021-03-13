@@ -26,7 +26,7 @@ const AppListItem = ({ currentApp, setCurrentApp }) => {
           <img
             className="plus"
             id="close-detail"
-            src="../dist/asset/plus.svg"
+            src="/dist/asset/plus.svg"
             onClick={handleCloseApps}
           ></img>
           <div className="logo-container">

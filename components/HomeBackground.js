@@ -17,7 +17,7 @@ const HomeBackground = () => {
       duration: 1,
       ease: "back",
     });
-    // tlBg.from("#body", { x: -500, opacity: 0, duration: 0.5 });
+
     tlEye.to(
       "#eye-open",
       { opacity: 0, duration: 0.5, ease: "power1.out" },

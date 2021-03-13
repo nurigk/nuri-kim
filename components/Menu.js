@@ -18,7 +18,7 @@ const Menu = ({setShowMenu}) => {
   return (
     <nav className="nav">
       <ul className="nav-list">
-        <a className="list-item" href="#aib" onClick={()=>{setShowMenu(false)}}>Software Application</a>
+        <a className="list-item" href="#aib" onClick={()=>{setShowMenu(false)}}>Software Applications</a>
         <a className="list-item" href="#resume" onClick={()=>{setShowMenu(false)}}>Resume</a>
         <a className="list-item" href="#contact" onClick={()=>{setShowMenu(false)}}>Contact me</a>
       </ul>
