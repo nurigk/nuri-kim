@@ -3,6 +3,11 @@ import { hot } from "react-hot-loader/root";
 import Menu from "./Menu.js";
 import "./home.scss";
 import { gsap } from "gsap";
+import plus from "../dist/asset/plus.svg";
+import nuriKim from "../dist/asset/nuri-kim.svg";
+import nuriClip from "../dist/asset/nuri_clip_small.mp4";
+import about from "../dist/asset/about-rect2.svg";
+import downArrow from "../dist/asset/down-arrow.svg";
 
 const Home = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -13,7 +18,7 @@ const Home = () => {
     tlEMove.to("#top", { y: 30, duration: 1.5 }, "-=.8");
     tlEMove.to("#middle", { y: 30, duration: 1.5 }, "-=.8");
     tlEMove.to("#bottom", { y: 20, duration: 1.5 }, "-=.8");
-    gsap.to(".down-arrow", {y:10, duration:1, yoyo:true, repeat:-1})
+    gsap.to(".down-arrow", { y: 10, duration: 1, yoyo: true, repeat: -1 });
   });
 
   const displayMenu = () => {
@@ -29,7 +34,7 @@ const Home = () => {
       {showMenu ? (
         <img
           className="plus menu"
-          src="/dist/asset/plus.svg"
+          src={plus}
           onClick={() => {
             setShowMenu(false);
           }}
@@ -128,7 +133,12 @@ const Home = () => {
         </svg>
       )}
 
-      <img className="nuri-kim" id="home-nuri-kim" src="/dist/asset/nuri-kim.svg" alt="Nuri Kim"></img>
+      <img
+        className="nuri-kim"
+        id="home-nuri-kim"
+        src={nuriKim}
+        alt="Nuri Kim"
+      ></img>
       <div id="about">
         <video
           onMouseEnter={() => {
@@ -139,37 +149,34 @@ const Home = () => {
           ref={videoRef}
           muted
         >
-          <source
-            src="/dist/asset/nuri_clip_small.mp4"
-            type="video/mp4"
-          ></source>
+          <source src={nuriClip} type="video/mp4"></source>
         </video>
-        <img id="about-me" src="/dist/asset/about-rect2.svg"></img>
+        <img id="about-me" src={about}></img>
 
         <div className="contact-icons" id="home-contact">
-      <a
-        id="contact-email"
-        className="contact-icon clickable"
-        href="mailto:nuri.g.kim@gmail.com"
-      ></a>
-      <a
-        id="contact-linkedIn"
-        className="contact-icon clickable"
-        href="https://www.linkedin.com/in/nuri-kim-025a7239/"
-        target="_blank"
-      ></a>
-      <a
-        id="contact-gh"
-        className="contact-icon clickable"
-        href="https://github.com/nurigk"
-        target="_blank"
-      ></a>
-    </div>
+          <a
+            id="contact-email"
+            className="contact-icon clickable"
+            href="mailto:nuri.g.kim@gmail.com"
+          ></a>
+          <a
+            id="contact-linkedIn"
+            className="contact-icon clickable"
+            href="https://www.linkedin.com/in/nuri-kim-025a7239/"
+            target="_blank"
+          ></a>
+          <a
+            id="contact-gh"
+            className="contact-icon clickable"
+            href="https://github.com/nurigk"
+            target="_blank"
+          ></a>
+        </div>
       </div>
-          <div className="scroll-down">
-            <p className="scroll">SCROLL</p>
-              <img className="down-arrow" src="/dist/asset/down-arrow.svg" alt="down arrow"></img>
-            </div>
+      <div className="scroll-down">
+        <p className="scroll">SCROLL</p>
+        <img className="down-arrow" src={downArrow} alt="down arrow"></img>
+      </div>
     </div>
   );
 };

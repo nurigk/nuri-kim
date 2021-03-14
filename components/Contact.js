@@ -4,6 +4,10 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./contact.scss";
 import Resume from "./Resume.js";
+import contactBackground from "../dist/asset/contact-background.svg";
+import contactBackgroundSmall from "../dist/asset/contact-background-small.svg";
+import thisIsDog from "../dist/asset/thisisdog.mp4";
+import nuriKim from "../dist/asset/nuri-kim.svg";
 
 const Contact = ({ addToRefs, refsArray }) => {
   const [displayVideo, setDisplayVideo] = useState(false);
@@ -20,30 +24,23 @@ const Contact = ({ addToRefs, refsArray }) => {
   }, [displayVideo, dogVideo]);
 
   useEffect(() => {
-  gsap.from("#contact-contact", {
-    x: "-100%",
-    duration: 1,
-    scrollTrigger: {
-      trigger: "#aib",
-      start:"top top",
-      scrub: 1,
-    },
-  });
-}, []);
-
+    gsap.from("#contact-contact", {
+      x: "-100%",
+      duration: 1,
+      scrollTrigger: {
+        trigger: "#aib",
+        start: "top top",
+        scrub: 1,
+      },
+    });
+  }, []);
 
   return (
     <section className="contact-container" id="contact" ref={addToRefs}>
       <picture id="contact-background">
-        <source
-          media="(min-width:801px)"
-          srcSet="/dist/asset/contact-background.svg"
-        />
-        <source
-          media="(max-width:800px)"
-          srcSet="/dist/asset/contact-background-small.svg"
-        />
-        <img src="/dist/asset/contact-background.svg" alt="background" />
+        <source media="(min-width:801px)" srcSet={contactBackground} />
+        <source media="(max-width:800px)" srcSet={contactBackgroundSmall} />
+        <img src={contactBackground} alt="background" />
       </picture>
       <div className="contact-items">
         {displayResume ? (
@@ -84,10 +81,7 @@ const Contact = ({ addToRefs, refsArray }) => {
               muted
               ref={dogVideo}
             >
-              <source
-                src="/dist/asset/thisisdog.mp4"
-                type="video/mp4"
-              ></source>
+              <source src={thisIsDog} type="video/mp4"></source>
             </video>
           ) : (
             <></>
@@ -117,7 +111,7 @@ const Contact = ({ addToRefs, refsArray }) => {
       <img
         className="nuri-kim"
         id="contact-nuri-kim"
-        src="/dist/asset/nuri-kim.svg"
+        src={nuriKim}
         alt="Nuri Kim"
       ></img>
     </section>

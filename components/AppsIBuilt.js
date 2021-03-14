@@ -5,6 +5,13 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./appsIBuilt.scss";
 import AppListItem from "./AppListItem.js";
 gsap.registerPlugin(ScrollTrigger);
+import namaslayDemo from "../dist/asset/namaslay-demo.mp4";
+import crispDemo from "../dist/asset/crisp-demo-small.mp4";
+import plantsitterDemo from "../dist/asset/plantsitter-demo.mp4";
+import productsDemo from "../dist/asset/api.mp4";
+import softwareApplications from "../dist/asset/software-application.svg"
+import nuriKim from "../dist/asset/nuri-kim.svg"
+import rect from "../dist/asset/rect.svg"
 
 const AppsIBuilt = ({ addToRefs, refsArray }) => {
   const [appsList, setAppsList] = useState([
@@ -19,7 +26,7 @@ const AppsIBuilt = ({ addToRefs, refsArray }) => {
       others activity and location, chat, and listen to music. I worked
       on data visualization using SVG elements to map users data and
       translating wireframes into an interactive and responsive app.`,
-      demoUrl: "/dist/asset/namaslay-demo.mp4",
+      demoUrl: namaslayDemo,
     },
     {
       appName: "Crisp",
@@ -27,7 +34,7 @@ const AppsIBuilt = ({ addToRefs, refsArray }) => {
       githubUrl: "https://github.com/hrnyc31-team-sparrow/FEC",
       techUsed: `React + Hooks, Redux + Hooks, Sass, Express`,
       appDesc: `Crisp is a fashion e-commerce web application. I worked on the reviews and ratings widget where users can sort through the reviews and submit their own.`,
-      demoUrl: "/dist/asset/crisp-demo-small.mp4",
+      demoUrl: crispDemo,
     },
     {
       appName: "Plantsitter",
@@ -35,7 +42,7 @@ const AppsIBuilt = ({ addToRefs, refsArray }) => {
       githubUrl: "https://github.com/nurigk/plantsitter",
       techUsed: `React + Hooks, Twilio, Node-cron, Sass, Express`,
       appDesc: `Plantsitter is a MVP project that I created where users can sign up and get text message reminders to water their plants at the frequency of their choosing.`,
-      demoUrl: "/dist/asset/plantsitter-demo.mp4",
+      demoUrl: plantsitterDemo,
     },
     {
       appName: "Products-Service-API",
@@ -43,7 +50,7 @@ const AppsIBuilt = ({ addToRefs, refsArray }) => {
       githubUrl: "https://github.com/SDC-Stratocumulus/products-service",
       techUsed: `Express, PostgreSQL, Docker, Artillery`,
       appDesc: `This is an API microservice built to scale up a back-end system of an e-commerce web application where I designed system architecture to encapsulate business logic and achieve a modernized system to support web-scale traffic.`,
-      demoUrl: "/dist/asset/api.mp4",
+      demoUrl: productsDemo,
     },
   ]);
   const [currentApp, setCurrentApp] = useState({});
@@ -108,14 +115,14 @@ const AppsIBuilt = ({ addToRefs, refsArray }) => {
 
         <img
           id="software-application"
-          src="/dist/asset/software-application.svg"
+          src={softwareApplications}
           alt="Software Applications"
         ></img>
 
         <img
           className="nuri-kim"
           id="apps-nuri-kim"
-          src="/dist/asset/nuri-kim.svg"
+          src={nuriKim}
           alt="Nuri Kim"
         ></img>
 
@@ -136,7 +143,7 @@ const AppsIBuilt = ({ addToRefs, refsArray }) => {
             target="_blank"
           ></a>
           <span className="rect" id="n-rect">
-            <img className="rect-img" src="/dist/asset/rect.svg"></img>
+            <img className="rect-img" src={rect}></img>
           </span>
         </div>
 
@@ -157,7 +164,7 @@ const AppsIBuilt = ({ addToRefs, refsArray }) => {
             target="_blank"
           ></a>
           <span className="rect" id="c-rect">
-            <img className="rect-img" src="/dist/asset/rect.svg"></img>
+            <img className="rect-img" src={rect}></img>
           </span>
         </div>
 
@@ -178,7 +185,7 @@ const AppsIBuilt = ({ addToRefs, refsArray }) => {
             target="_blank"
           ></a>
           <span className="rect" id="pl-rect">
-            <img className="rect-img" src="/dist/asset/rect.svg"></img>
+            <img className="rect-img" src={rect}></img>
           </span>
         </div>
 
@@ -199,7 +206,7 @@ const AppsIBuilt = ({ addToRefs, refsArray }) => {
             target="_blank"
           ></a>
           <span className="rect" id="pr-rect">
-            <img className="rect-img" src="/dist/asset/rect.svg"></img>
+            <img className="rect-img" src={rect}></img>
           </span>
         </div>
       </div>

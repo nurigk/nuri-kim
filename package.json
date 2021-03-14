@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-dev": "webpack --mode development --watch",
     "build-prod": "webpack --mode production",
-    "deploy": "./node_modules/gh-pages/bin/gh-pages-clean.js && gh-pages -d build"
+    "deploy": "./node_modules/gh-pages/bin/gh-pages-clean.js && gh-pages -d dist"
   },
   "repository": {
     "type": "git",

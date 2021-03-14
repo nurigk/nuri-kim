@@ -3,12 +3,12 @@ import { hot } from "react-hot-loader/root";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./appListItem.scss";
+import plus from "../dist/asset/plus.svg";
 
 const AppListItem = ({ currentApp, setCurrentApp }) => {
-
-  useEffect(()=>{
-    gsap.from(".apps-detail",{y:"250%", duration:1})
-  },[currentApp])
+  useEffect(() => {
+    gsap.from(".apps-detail", { y: "250%", duration: 1 });
+  }, [currentApp]);
 
   const handleCloseApps = () => {
     const closingApps = gsap.to(".apps-detail", {
@@ -26,7 +26,7 @@ const AppListItem = ({ currentApp, setCurrentApp }) => {
           <img
             className="plus"
             id="close-detail"
-            src="/dist/asset/plus.svg"
+            src={plus}
             onClick={handleCloseApps}
           ></img>
           <div className="logo-container">

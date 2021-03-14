@@ -9,7 +9,7 @@ const config = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath:"/nuri-kim/"
+    // publicPath:"/nuri-kim/"
   },
   module: {
     rules: [
@@ -40,6 +40,12 @@ const config = {
       {
         test: /\.svg$/,
         use: 'file-loader'
+      },
+      {
+        test: /\.(mp4|webm)$/,
+        use: {
+          loader: 'file-loader',
+        }
       }
     ]
   },
