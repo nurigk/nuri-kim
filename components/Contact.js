@@ -64,7 +64,8 @@ const Contact = ({ addToRefs, refsArray }) => {
           <h1
             id="contact-me"
             className="app-name"
-            onMouseEnter={handleDisplayVideo}
+            onMouseEnter={()=>{setDisplayVideo(true)}}
+            onMouseLeave={()=>{setDisplayVideo(false)}}
           >
             Reach out to me!
           </h1>

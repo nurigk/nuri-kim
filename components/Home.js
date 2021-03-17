@@ -18,15 +18,14 @@ const Home = () => {
   const [currentWidth,setCurrentWidth] = useState(0);
   const [currentSource,setCurrentSource] = useState(nuriStatic);
   const tlEMove = gsap.timeline({ repeat: -1, yoyo: true });
+
   useEffect(() => {
+    gsap.to(".down-arrow", { y: 20, duration: 1, repeat:-1, yoyo:true});
     tlEMove.to("#all-text", { y: 30, duration: 1.5 });
     tlEMove.to("#top", { y: 30, duration: 1.5 }, "-=.8");
     tlEMove.to("#middle", { y: 30, duration: 1.5 }, "-=.8");
     tlEMove.to("#bottom", { y: 20, duration: 1.5 }, "-=.8");
-
-    gsap.fromTo(".down-arrow", { y: -15, duration: 1, yoyo: true, repeat: -1 }, { y: 15, duration: 1});
-
-  });
+  },[]);
   useEffect(()=>{
     setCurrentWidth(containerRef.current.clientWidth)
   },[containerRef.current])
@@ -47,6 +46,63 @@ const Home = () => {
   return (
     <div className="nav-container" ref={containerRef}>
       <div className="left-half"></div>
+
+      <div className="nuri-kim" id="home-nuri-kim">
+        Nuri Kim
+      </div>
+      <div id="about">
+        {currentWidth > 450 ?
+        <video
+        onMouseEnter={() => {
+          videoRef.current.play();
+        }}
+        controls={false}
+        className="nuri-video"
+        ref={videoRef}
+        muted
+      >
+        <source src={nuriClip} type="video/mp4"></source>
+      </video>
+      :
+      <img className="nuri-video" src={currentSource} onClick={displayGif}></img>
+        }
+
+
+        <div id="about-bottom">
+          <h1 id="about-me">I'm a <span className="about-large" id="about-software">software engineer</span>
+          <br/>
+          & a <span className="about-large" id="about-fashion">fashion designer</span>
+          <br/> based in NYC.
+          <br/>
+          I love collaborating
+          <br/>
+          & taking on new challenges.
+          <br/>
+          <span className="about-large" id="about-connect">Let's connect!</span>
+          </h1>
+          <img id="about-rect" src={aboutRect}></img>
+
+        <div className="contact-icons" id="home-contact">
+          <a
+            id="contact-email"
+            className="contact-icon clickable"
+            href="mailto:nuri.g.kim@gmail.com"
+          ></a>
+          <a
+            id="contact-linkedIn"
+            className="contact-icon clickable"
+            href="https://www.linkedin.com/in/nuri-kim-025a7239/"
+            target="_blank"
+          ></a>
+          <a
+            id="contact-gh"
+            className="contact-icon clickable"
+            href="https://github.com/nurigk"
+            target="_blank"
+          ></a>
+        </div>
+        </div>
+      </div>
       {displayMenu()}
       {showMenu ? (
         <img
@@ -149,62 +205,6 @@ const Home = () => {
           </g>
         </svg>
       )}
-      <div className="nuri-kim" id="home-nuri-kim">
-        Nuri Kim
-      </div>
-      <div id="about">
-        {currentWidth > 450 ?
-        <video
-        onMouseEnter={() => {
-          videoRef.current.play();
-        }}
-        controls={false}
-        className="nuri-video"
-        ref={videoRef}
-        muted
-      >
-        <source src={nuriClip} type="video/mp4"></source>
-      </video>
-      :
-      <img className="nuri-video" src={currentSource} onClick={displayGif}></img>
-        }
-
-        {/* <img id="about-me" src={about}></img> */}
-        <div id="about-bottom">
-          <h1 id="about-me">I'm a <span className="about-large" id="about-software">software engineer</span>
-          <br/>
-          & a <span className="about-large" id="about-fashion">fashion designer</span>
-          <br/> based in NYC.
-          <br/>
-          I love collaborating
-          <br/>
-          & taking on new challenges.
-          <br/>
-          <span className="about-large" id="about-connect">Let's connect!</span>
-          </h1>
-          <img id="about-rect" src={aboutRect}></img>
-
-        <div className="contact-icons" id="home-contact">
-          <a
-            id="contact-email"
-            className="contact-icon clickable"
-            href="mailto:nuri.g.kim@gmail.com"
-          ></a>
-          <a
-            id="contact-linkedIn"
-            className="contact-icon clickable"
-            href="https://www.linkedin.com/in/nuri-kim-025a7239/"
-            target="_blank"
-          ></a>
-          <a
-            id="contact-gh"
-            className="contact-icon clickable"
-            href="https://github.com/nurigk"
-            target="_blank"
-          ></a>
-        </div>
-        </div>
-      </div>
       <div className="scroll-down">
         <p className="scroll">SCROLL</p>
         <img className="down-arrow" src={downArrow} alt="down arrow"></img>
