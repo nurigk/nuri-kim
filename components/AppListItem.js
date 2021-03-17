@@ -36,7 +36,6 @@ const AppListItem = ({ currentApp, setCurrentApp }) => {
           <div className="app-video-container">
             <video
               id={`${currentApp.appName.toLowerCase()}-video`}
-              autoPlay
               controls
               muted
             >

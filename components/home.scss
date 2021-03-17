@@ -37,7 +37,7 @@
   margin-left: 2em;
   align-self: start;
   justify-self: start;
-  z-index: 2;
+  z-index: 3;
   background-color: transparent;
 }
 
@@ -47,53 +47,118 @@
 }
 
 .nuri-kim {
-  height: 9em;
-  background-color: transparent;
-  z-index: 1;
+  color: $font-color;
   margin: 1em;
+  @include page-titles-rotation;
+  @media (max-width: 450px) {
+    margin: .5em;
+  }
 }
 
 #home-nuri-kim {
+  z-index: 1;
   grid-area: 4/ 1 / 5 / 2;
-}
-
-.nuri-kim > img {
-  background-color: transparent;
+  margin-bottom: -5em;
+  color: $font-color;
+  @media (max-width: 450px) {
+    margin-bottom: -7em;
+  }
 }
 
 #about {
   grid-area: 1/2/5/5;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
   justify-content: center;
   align-items: center;
   align-content: center;
+  justify-self: center;
+  align-self: center;
   background-color: transparent;
   padding: 10%;
   padding-left: 30%;
-  height: 100%;
+  // height: 100%;
+  width:100%;
   z-index: 2;
+}
+
+#about-bottom {
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-content: start;
+  background-color: transparent;
 }
 
 #about-me {
+  grid-column: 1/3;
+  margin:.5em;
   z-index: 2;
-  height: 35%;
+  height:fit-content;
   background-color: transparent;
-  align-self: center;
+  align-self: start;
+  text-align: end;
+  color: $font-color;
+  font-size: 2em;
+  // white-space: nowrap;
+  // overflow: visible;
   @media (max-height: 500px), (max-width: 450px) {
-    height: 20%;
+    font-size: 1em;
   }
 }
 
-#nuri-video {
-  height: 35%;
+.about-large {
+  background-color: transparent;
+  font-family: $display-font;
+  font-size: 1.2em;
+  @media (max-height: 500px), (max-width: 450px) {
+    font-size: 1em;
+  }
+}
+
+#about-software {
+  color:$brown;
+}
+
+#about-fashion {
+  color:$green;
+}
+
+#about-connect {
+  color: $pink;
+}
+
+#about-rect {
+  position: absolute;
+  grid-column: 2;
+  background-color: transparent;
+  height: 18em;
+  align-self: start;
+  justify-self:end;
+  @media (max-height: 500px), (max-width: 450px) {
+    height: 10em;
+  }
+}
+
+.nuri-video {
+  grid-row: 1;
+  height: 15em;
+
+  margin:2em;
   z-index: 1;
   background-color: transparent;
   opacity: 0.7;
-  align-self: center;
+  align-self: end;
+  justify-self: center;
   @media (max-height: 500px), (max-width: 450px) {
-    height: 20%;
+    height: 8em;
   }
+}
+
+#home-contact {
+  grid-column: 1/3;
+  justify-self: center;
 }
 
 .plus {
@@ -129,12 +194,12 @@
 .scroll-down {
   position: absolute;
   grid-area: 4/1/5/5;
-  align-self: center;
+  align-self: flex-end;
   justify-self: center;
   z-index: 2;
   height: 3em;
   display: flex;
-  margin-top: 9%;
+  margin-bottom: 2em;
   justify-content: center;
   align-items: center;
   background-color: transparent;

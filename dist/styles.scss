@@ -17,3 +17,27 @@ $main-font: 'Cormorant Garamond', serif;
   height: 100%;
   position: relative;
 }
+
+@mixin page-titles-rotation {
+  position: absolute;
+  font-family: $display-font;
+  background-color: transparent;
+  transform:rotate(270deg);
+  transform-origin:0 0;
+  font-size: 2em;
+  white-space: nowrap;
+}
+
+@mixin no-margin {
+  @media (max-width: 450px) {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+   }
+}
+
+//Loading
+#smiley {
+  height: 3em;
+  transform: translate();
+}

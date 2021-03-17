@@ -6,22 +6,12 @@ import "./contact.scss";
 import Resume from "./Resume.js";
 import contactBackground from "../dist/asset/contact-background.svg";
 import contactBackgroundSmall from "../dist/asset/contact-background-small.svg";
-import thisIsDog from "../dist/asset/thisisdog.mp4";
-import nuriKim from "../dist/asset/nuri-kim.svg";
+import thisIsDogGif from "../dist/asset/thisisdog-gif.gif";
 
 const Contact = ({ addToRefs, refsArray }) => {
   const [displayVideo, setDisplayVideo] = useState(false);
   const [displayResume, setDisplayResume] = useState(false);
   const [displayIcons, setDisplayIcons] = useState(false);
-  const dogVideo = useRef(null);
-
-  useEffect(() => {
-    if (displayVideo === true && dogVideo.current !== null) {
-      dogVideo.current.onended = () => {
-        setDisplayVideo(false);
-      };
-    }
-  }, [displayVideo, dogVideo]);
 
   useEffect(() => {
     gsap.from("#contact-contact", {
@@ -34,6 +24,13 @@ const Contact = ({ addToRefs, refsArray }) => {
       },
     });
   }, []);
+
+  const handleDisplayVideo = () => {
+    setDisplayVideo(true)
+    setTimeout(()=>{
+      setDisplayVideo(false);
+    },3400)
+  }
 
   return (
     <section className="contact-container" id="contact" ref={addToRefs}>
@@ -67,22 +64,12 @@ const Contact = ({ addToRefs, refsArray }) => {
           <h1
             id="contact-me"
             className="app-name"
-            onMouseEnter={() => {
-              setDisplayVideo(true);
-            }}
+            onMouseEnter={handleDisplayVideo}
           >
             Reach out to me!
           </h1>
           {displayVideo ? (
-            <video
-              id="dog-video"
-              autoPlay
-              controls={false}
-              muted
-              ref={dogVideo}
-            >
-              <source src={thisIsDog} type="video/mp4"></source>
-            </video>
+            <img id="dog-video" src={thisIsDogGif}></img>
           ) : (
             <></>
           )}
@@ -107,13 +94,9 @@ const Contact = ({ addToRefs, refsArray }) => {
           </div>
         </div>
       </div>
+      <div className="nuri-kim"
+        id="contact-nuri-kim">Nuri Kim</div>
 
-      <img
-        className="nuri-kim"
-        id="contact-nuri-kim"
-        src={nuriKim}
-        alt="Nuri Kim"
-      ></img>
     </section>
   );
 };

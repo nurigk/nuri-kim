@@ -3,23 +3,40 @@ import { hot } from "react-hot-loader/root";
 import Menu from "./Menu.js";
 import "./home.scss";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import plus from "../dist/asset/plus.svg";
-import nuriKim from "../dist/asset/nuri-kim.svg";
 import nuriClip from "../dist/asset/nuri_clip_small.mp4";
-import about from "../dist/asset/about-rect2.svg";
+import aboutRect from "../dist/asset/about-me-rect.svg";
 import downArrow from "../dist/asset/down-arrow.svg";
+import nuriStatic from "../dist/asset/nuri-static.png";
+import nuriGif from "../dist/asset/nuri-gif-small.gif";
 
 const Home = () => {
   const [showMenu, setShowMenu] = useState(false);
   const videoRef = useRef(null);
+  const containerRef = useRef(null);
+  const [currentWidth,setCurrentWidth] = useState(0);
+  const [currentSource,setCurrentSource] = useState(nuriStatic);
   const tlEMove = gsap.timeline({ repeat: -1, yoyo: true });
   useEffect(() => {
     tlEMove.to("#all-text", { y: 30, duration: 1.5 });
     tlEMove.to("#top", { y: 30, duration: 1.5 }, "-=.8");
     tlEMove.to("#middle", { y: 30, duration: 1.5 }, "-=.8");
     tlEMove.to("#bottom", { y: 20, duration: 1.5 }, "-=.8");
-    gsap.to(".down-arrow", { y: 10, duration: 1, yoyo: true, repeat: -1 });
+
+    gsap.fromTo(".down-arrow", { y: -15, duration: 1, yoyo: true, repeat: -1 }, { y: 15, duration: 1});
+
   });
+  useEffect(()=>{
+    setCurrentWidth(containerRef.current.clientWidth)
+  },[containerRef.current])
+
+  const displayGif = () => {
+    setCurrentSource(nuriGif);
+    setTimeout(()=>{
+      setCurrentSource(nuriStatic) ;
+    },3800);
+  }
 
   const displayMenu = () => {
     if (showMenu) {
@@ -28,7 +45,7 @@ const Home = () => {
   };
 
   return (
-    <div className="nav-container">
+    <div className="nav-container" ref={containerRef}>
       <div className="left-half"></div>
       {displayMenu()}
       {showMenu ? (
@@ -132,26 +149,40 @@ const Home = () => {
           </g>
         </svg>
       )}
-
-      <img
-        className="nuri-kim"
-        id="home-nuri-kim"
-        src={nuriKim}
-        alt="Nuri Kim"
-      ></img>
+      <div className="nuri-kim" id="home-nuri-kim">
+        Nuri Kim
+      </div>
       <div id="about">
+        {currentWidth > 450 ?
         <video
-          onMouseEnter={() => {
-            videoRef.current.play();
-          }}
-          controls={false}
-          id="nuri-video"
-          ref={videoRef}
-          muted
-        >
-          <source src={nuriClip} type="video/mp4"></source>
-        </video>
-        <img id="about-me" src={about}></img>
+        onMouseEnter={() => {
+          videoRef.current.play();
+        }}
+        controls={false}
+        className="nuri-video"
+        ref={videoRef}
+        muted
+      >
+        <source src={nuriClip} type="video/mp4"></source>
+      </video>
+      :
+      <img className="nuri-video" src={currentSource} onClick={displayGif}></img>
+        }
+
+        {/* <img id="about-me" src={about}></img> */}
+        <div id="about-bottom">
+          <h1 id="about-me">I'm a <span className="about-large" id="about-software">software engineer</span>
+          <br/>
+          & a <span className="about-large" id="about-fashion">fashion designer</span>
+          <br/> based in NYC.
+          <br/>
+          I love collaborating
+          <br/>
+          & taking on new challenges.
+          <br/>
+          <span className="about-large" id="about-connect">Let's connect!</span>
+          </h1>
+          <img id="about-rect" src={aboutRect}></img>
 
         <div className="contact-icons" id="home-contact">
           <a
@@ -171,6 +202,7 @@ const Home = () => {
             href="https://github.com/nurigk"
             target="_blank"
           ></a>
+        </div>
         </div>
       </div>
       <div className="scroll-down">

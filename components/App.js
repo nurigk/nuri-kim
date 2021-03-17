@@ -7,15 +7,17 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-const App = (props) => {
+const App = () => {
   const refsArray = useRef([]);
   refsArray.current = [];
+
 
   const addToRefs = (el) => {
     if (el && !refsArray.current.includes(el)) {
       refsArray.current.push(el);
     }
   };
+
 useEffect(()=>{
   refsArray.current.forEach((panel, i) => {
         ScrollTrigger.create({
@@ -29,7 +31,7 @@ useEffect(()=>{
     ScrollTrigger.create({
       snap: {
         snapTo: 1/2,
-        delay: 0.2, // wait 0.2 seconds from the last scroll event before doing the
+        delay: 0.2,
     }});
 },[])
 
@@ -45,6 +47,7 @@ useEffect(()=>{
           <Contact />
           </section>
     </div>
+
   );
 };
 
