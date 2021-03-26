@@ -30,7 +30,12 @@ const AppListItem = ({ currentApp, setCurrentApp }) => {
             onClick={handleCloseApps}
           ></img>
           <div className="logo-container">
-            <div id="app-name">{currentApp.appName}</div>
+            {currentApp.nickName === "products" ?
+            <div className="app-name" id="products-name">{currentApp.appName}</div>
+            :
+            <div className="app-name">{currentApp.appName}</div>
+            }
+
           </div>
 
           <div className="app-video-container">

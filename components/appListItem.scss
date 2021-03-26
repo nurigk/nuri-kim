@@ -27,7 +27,7 @@
   background-color: transparent;
 }
 
-#app-name {
+.app-name {
   align-self: center;
   padding-top: $spacing;
   font-size: 3em;
@@ -39,6 +39,11 @@
   }
 }
 
+#products-name {
+  @media (max-width: 450px){
+    font-size: 2em;
+  }
+}
 .app-video-container {
   grid-row: 2/3;
   z-index: 2;

@@ -118,7 +118,7 @@ const AppsIBuilt = ({ addToRefs, refsArray }) => {
         <div id="namaslay-container" className="app-item">
           <h1
             id="namaslay"
-            className="app-name clickable namaslay-color"
+            className="apps-name clickable namaslay-color"
             onClick={() => {
               handleSetCurrentApp("Namaslay");
             }}
@@ -139,7 +139,7 @@ const AppsIBuilt = ({ addToRefs, refsArray }) => {
         <div id="crisp-container" className="app-item">
           <h1
             id="crisp"
-            className="app-name clickable crisp-color"
+            className="apps-name clickable crisp-color"
             onClick={() => {
               handleSetCurrentApp("Crisp");
             }}
@@ -160,7 +160,7 @@ const AppsIBuilt = ({ addToRefs, refsArray }) => {
         <div id="plantsitter-container" className="app-item">
           <h1
             id="plantsitter"
-            className="app-name clickable plantsitter-color"
+            className="apps-name clickable plantsitter-color"
             onClick={() => {
               handleSetCurrentApp("Plantsitter");
             }}
@@ -181,7 +181,7 @@ const AppsIBuilt = ({ addToRefs, refsArray }) => {
         <div id="products-container" className="app-item">
           <h1
             id="products"
-            className="app-name clickable products-color"
+            className="apps-name clickable products-color"
             onClick={() => {
               handleSetCurrentApp("Products");
             }}
