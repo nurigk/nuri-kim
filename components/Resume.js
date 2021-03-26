@@ -21,7 +21,7 @@ const Resume = ({ displayResume, setDisplayResume }) => {
   };
   return (
     <section className="resume-container">
-      <img className="plus" id="close" src={plus} onClick={handleClose}></img>
+      <img className="plus" id="resume-close" src={plus} onClick={handleClose}></img>
 
       <img id="resume-img" src={resume} alt="Resume"></img>
       <a id="click-download" href={resume} download="nuri-kim-resume">

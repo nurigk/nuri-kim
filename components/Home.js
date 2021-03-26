@@ -26,6 +26,7 @@ const Home = () => {
     tlEMove.to("#middle", { y: 30, duration: 1.5 }, "-=.8");
     tlEMove.to("#bottom", { y: 20, duration: 1.5 }, "-=.8");
   },[]);
+
   useEffect(()=>{
     setCurrentWidth(containerRef.current.clientWidth)
   },[containerRef.current])

@@ -9,7 +9,7 @@ import namaslayDemo from "../dist/asset/namaslay-demo.mp4";
 import crispDemo from "../dist/asset/crisp-demo-small.mp4";
 import plantsitterDemo from "../dist/asset/plantsitter-demo.mp4";
 import productsDemo from "../dist/asset/api.mp4";
-import rect from "../dist/asset/rect.svg"
+import rect from "../dist/asset/rect.svg";
 
 const AppsIBuilt = ({ addToRefs, refsArray }) => {
   const [appsList, setAppsList] = useState([
@@ -110,24 +110,11 @@ const AppsIBuilt = ({ addToRefs, refsArray }) => {
       <div className="apps-container">
         {diplayDetail()}
 
-        {/* <img
-          id="software-application"
-          src={softwareApplications}
-          alt="Software Applications"
-        ></img> */}
-        <div
-          id="software-application"
-        >Software Applications</div>
-        {/* <img
-          className="nuri-kim"
-          id="apps-nuri-kim"
-          src={nuriKim}
-          alt="Nuri Kim"
-        ></img> */}
-        <div
-          className="nuri-kim"
-          id="apps-nuri-kim"
-        >Nuri Kim</div>
+        <div id="software-application">Software Applications</div>
+
+        <div className="nuri-kim" id="apps-nuri-kim">
+          Nuri Kim
+        </div>
         <div id="namaslay-container" className="app-item">
           <h1
             id="namaslay"

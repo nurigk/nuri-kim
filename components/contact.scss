@@ -192,3 +192,16 @@ height: 306px;
   width: 3em;
   height: 3em;
 }
+
+#resume-close {
+  z-index: 5;
+  top: 0;
+  left: 10%;
+  margin: $spacing;
+  background-color: transparent;
+  width: 3em;
+  height: 3em;
+  @media (max-width:450px){
+    top: 5%;
+  }
+}
