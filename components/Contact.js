@@ -51,7 +51,7 @@ const Contact = ({ addToRefs, refsArray }) => {
         <div className="contact-item" id="resume-container">
           <h1
             id="resume"
-            className="app-name clickable"
+            className="apps-name clickable"
             onClick={() => {
               setDisplayResume(true);
             }}
@@ -63,7 +63,7 @@ const Contact = ({ addToRefs, refsArray }) => {
         <div className="contact-item" id="contact-me-container">
           <h1
             id="contact-me"
-            className="app-name"
+            className="apps-name"
             onMouseEnter={()=>{setDisplayVideo(true)}}
             onMouseLeave={()=>{setDisplayVideo(false)}}
           >
