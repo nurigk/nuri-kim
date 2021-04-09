@@ -4,9 +4,9 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./contact.scss";
 import Resume from "./Resume.js";
-import contactBackground from "../dist/asset/contact-background.svg";
-import contactBackgroundSmall from "../dist/asset/contact-background-small.svg";
-import thisIsDogGif from "../dist/asset/thisisdog-gif.gif";
+import contactBackground from "../../dist/asset/contact-background.svg";
+import contactBackgroundSmall from "../../dist/asset/contact-background-small.svg";
+import thisIsDogGif from "../../dist/asset/thisisdog-gif.gif";
 
 const Contact = ({ addToRefs, refsArray }) => {
   const [displayVideo, setDisplayVideo] = useState(false);

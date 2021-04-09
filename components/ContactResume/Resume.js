@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { hot } from "react-hot-loader/root";
 import { gsap } from "gsap";
-import plus from "../dist/asset/plus.svg";
-import resume from "../dist/asset/Nuri-Kim-Resume.jpg";
+import plus from "../../dist/asset/plus.svg";
+import resume from "../../dist/asset/Nuri-Kim-Resume.jpg";
+import "./resume.scss";
 
 const Resume = ({ displayResume, setDisplayResume }) => {
   const rlResume = gsap.timeline();

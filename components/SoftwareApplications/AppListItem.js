@@ -3,7 +3,7 @@ import { hot } from "react-hot-loader/root";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./appListItem.scss";
-import plus from "../dist/asset/plus.svg";
+import plus from "../../dist/asset/plus.svg";
 
 const AppListItem = ({ currentApp, setCurrentApp }) => {
   useEffect(() => {

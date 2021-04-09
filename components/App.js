@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { hot } from "react-hot-loader/root";
-import HomeBackground from "./HomeBackground.js";
-import AppsIBuilt from "./AppsIBuilt.js";
-import Contact from "./Contact.js";
+import HomeBackground from "./Home/HomeBackground.js";
+import AppsIBuilt from "./SoftwareApplications/AppsIBuilt.js";
+import Contact from "./ContactResume/Contact.js";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);

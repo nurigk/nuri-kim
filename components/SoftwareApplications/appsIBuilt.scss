@@ -1,4 +1,4 @@
-@import "../dist/styles";
+@import "../../dist/styles.scss";
 
 .aib-container {
   height: 100%;
@@ -70,10 +70,10 @@
 }
 
 .gh-logo {
-  background-image: url("../dist/asset/github-logo.svg");
+  background-image: url("../../dist/asset/github-logo.svg");
 }
 .gh-logo:hover {
-  cursor: url("../dist/asset/view-gh.svg"), default;
+  cursor: url("../../dist/asset/view-gh.svg"), default;
 }
 
 .icon:hover {

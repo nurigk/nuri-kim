@@ -5,11 +5,11 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./appsIBuilt.scss";
 import AppListItem from "./AppListItem.js";
 gsap.registerPlugin(ScrollTrigger);
-import namaslayDemo from "../dist/asset/namaslay-demo.mp4";
-import crispDemo from "../dist/asset/crisp-demo-small.mp4";
-import plantsitterDemo from "../dist/asset/plantsitter-demo.mp4";
-import productsDemo from "../dist/asset/api.mp4";
-import rect from "../dist/asset/rect.svg";
+import namaslayDemo from "../../dist/asset/namaslay-demo.mp4";
+import crispDemo from "../../dist/asset/crisp-demo-small.mp4";
+import plantsitterDemo from "../../dist/asset/plantsitter-demo.mp4";
+import productsDemo from "../../dist/asset/api.mp4";
+import rect from "../../dist/asset/rect.svg";
 
 const AppsIBuilt = ({ addToRefs, refsArray }) => {
   const [appsList, setAppsList] = useState([

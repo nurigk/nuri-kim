@@ -4,12 +4,12 @@ import Menu from "./Menu.js";
 import "./home.scss";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import plus from "../dist/asset/plus.svg";
-import nuriClip from "../dist/asset/nuri_clip_small.mp4";
-import aboutRect from "../dist/asset/about-me-rect.svg";
-import downArrow from "../dist/asset/down-arrow.svg";
-import nuriStatic from "../dist/asset/nuri-static.png";
-import nuriGif from "../dist/asset/nuri-gif-small.gif";
+import plus from "../../dist/asset/plus.svg";
+import nuriClip from "../../dist/asset/nuri_clip_small.mp4";
+import aboutRect from "../../dist/asset/about-me-rect.svg";
+import downArrow from "../../dist/asset/down-arrow.svg";
+import nuriStatic from "../../dist/asset/nuri-static.png";
+import nuriGif from "../../dist/asset/nuri-gif-small.gif";
 
 const Home = () => {
   const [showMenu, setShowMenu] = useState(false);

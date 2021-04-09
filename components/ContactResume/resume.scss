@@ -1,0 +1,60 @@
+@import "../../dist/styles.scss";
+
+.resume-container {
+  width: 100%;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  position: absolute;
+  z-index: 4;
+  top: 0;
+}
+
+#resume-close {
+  z-index: 5;
+  top: 0;
+  left: 10%;
+  margin: $spacing;
+  background-color: transparent;
+  width: 3em;
+  height: 3em;
+  @media (max-width:450px){
+    top: 5%;
+  }
+}
+
+#click-download {
+  z-index: 5;
+  font-size: 2em;
+  right: 0;
+  align-self: center;
+  font-family: $main-font;
+  background-color: transparent;
+  height: fit-content;
+  position: absolute;
+  color: $accent-color;
+  writing-mode: vertical-rl;
+  text-orientation: sideways;
+  text-decoration: none;
+  @media (max-width: 450px) {
+    z-index: 3;
+    font-size: 2em;
+    writing-mode:  horizontal-tb;
+    bottom:10%;
+    align-self: center;
+  }
+}
+
+
+#click-download > p {
+  background-color: transparent;
+}
+
+#resume-img {
+  width: 100%;
+  align-self: center;
+  z-index: 4;
+  object-fit: contain;
+  background-color: transparent;
+}

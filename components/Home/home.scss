@@ -1,4 +1,4 @@
-@import "../dist/styles";
+@import "../../dist/styles.scss";
 
 .nav-container {
   display: grid;
@@ -43,7 +43,7 @@
 
 .clickable:hover {
   transform: scale(1.2);
-  cursor: url("../dist/asset/view2.svg"), default;
+  cursor: url("../../dist/asset/view2.svg"), default;
 }
 
 .nuri-kim {

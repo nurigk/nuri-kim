@@ -1,4 +1,4 @@
-@import "../dist/styles";
+@import "../../dist/styles.scss";
 
 .nav {
   z-index: 3;
@@ -36,7 +36,7 @@
 }
 
 .list-item:hover {
-  cursor: url("../dist/asset/view2.svg"), default;
+  cursor: url("../../dist/asset/view2.svg"), default;
   font-size: 2em;
 }
 
